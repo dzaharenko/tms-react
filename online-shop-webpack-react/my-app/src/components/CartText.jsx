@@ -7,7 +7,7 @@ export default class CartText extends Component {
         return (
             <div className="cart__text">
                 <div className="cart__title">{this.props.title}</div>
-                <div className="cart__desc">{this.props.description}</div>
+                <div className="cart__desc" dangerouslySetInnerHTML = {{ __html: this.props.description}} />
             </div>
         );
     }

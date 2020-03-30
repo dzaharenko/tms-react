@@ -9,12 +9,13 @@ import Search from './Search.jsx';
 
 export default class HeaderBody extends Component {
     render() {
+        const { count, amount } = this.props.basket;
         return (
             <div className="header">
                 <div className="container header__container">
                     <Logo />
                     <Search />
-                    <Basket />
+                    <Basket count={count} amount={amount} />
                 </div>
             </div>
         );

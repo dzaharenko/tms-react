@@ -16,10 +16,6 @@ export default class Products extends Component {
                     <div className="cart">
                         <CartImageBlock imageLink={productsD.imageLink} />
                         <CartText title={productsD.title} description={productsD.description} />
-                        {/*<div className="cart__price-block">
-                            <div className="cart__price">{productsD.price.value}</div>
-                            <a href="#" className="cart__button">Add to Basket</a>
-                        </div>*/}
                         <CartPriceBlock price={productsD.price} />
                     </div>
                 )
