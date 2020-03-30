@@ -1,0 +1,29 @@
+a {
+    text-decoration: none;
+    color: #252525;
+}
+
+.cart__price-block {
+    align-self: end;
+    justify-self: end;
+    text-align: right;
+}
+
+.cart__price {
+    padding-bottom: 8px;
+}
+
+.cart__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 270px;
+    height: 36px;
+    color: #ffffff;
+    background-color: #ff8b38;
+    border-radius: 4px;
+}
+
+.cart__button._active {
+    background-color: #252525;
+}

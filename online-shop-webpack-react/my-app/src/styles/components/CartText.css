@@ -1,0 +1,12 @@
+.cart__text {
+    align-self: center;
+}
+
+.cart__title {
+    padding-bottom: 20px;
+    font-weight: 600;
+}
+
+.cart__desc {
+    font-size: 12px;
+}
