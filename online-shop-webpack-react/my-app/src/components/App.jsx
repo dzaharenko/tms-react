@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
+import PropTypes from 'prop-types';
+
 import '../styles/components/App.css';
 
 import HeaderBody from './HeaderBody.jsx';
 import MainBody from './MainBody.jsx';
-import productsD from '../constants/ProductsData';
 
 export default class App extends Component {
     constructor(props) {
@@ -17,7 +18,7 @@ export default class App extends Component {
         };
 
         this.addToBasket = this.addToBasket.bind(this);
-        this.removeToBasket = this.removeToBasket.bind(this);
+        this.removeFromBasket = this.removeFromBasket.bind(this);
     }
 
     addToBasket(product) {
@@ -29,7 +30,7 @@ export default class App extends Component {
         }));
     }
 
-    removeToBasket(product) {
+    removeFromBasket(product) {
         this.setState(prevState => ({
             basket: {
                 count: prevState.basket.count - 1,
@@ -41,8 +42,14 @@ export default class App extends Component {
     return (
         <>
             <HeaderBody basket={this.state.basket} />
-            <MainBody products={productsD} addToBasket={this.addToBasket} removeToBasket={this.removeToBasket}/>
+            <MainBody addToBasket={this.addToBasket} removeFromBasket={this.removeFromBasket}/>
         </>
     );
   }
 }
+
+App.propTypes = {
+    basket: PropTypes.number,
+    addToBasket: PropTypes.func,
+    removeFromBasket: PropTypes.func,
+};
