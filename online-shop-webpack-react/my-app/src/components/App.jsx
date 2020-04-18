@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import PropTypes from 'prop-types';
-
 import '../styles/components/App.css';
 
 import HeaderBody from './HeaderBody.jsx';
@@ -47,9 +45,3 @@ export default class App extends Component {
     );
   }
 }
-
-App.propTypes = {
-    basket: PropTypes.number,
-    addToBasket: PropTypes.func,
-    removeFromBasket: PropTypes.func,
-};

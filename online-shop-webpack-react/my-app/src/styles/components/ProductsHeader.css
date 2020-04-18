@@ -8,6 +8,15 @@
     margin-bottom: 30px;
 }
 
+.products__line {
+    margin-inline-start: auto;
+    margin-right: 30px;
+}
+
 .products__sort {
+    font-weight: bold;
+}
+
+.products__value {
     font-weight: bold;
 }

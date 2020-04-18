@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 
 import PropTypes from 'prop-types';
 
@@ -8,18 +8,27 @@ import '../styles/index.css';
 import ProductsHeader from './ProductsHeader.jsx';
 import Products from './Products.jsx';
 import productsD from "../constants/ProductsData";
+import sortArray from '../helpers/sortArray.js';
 
-const MainBody = ({addToBasket, removeFromBasket}) => {
-    return <main className="container">
-        <ProductsHeader/>
-        <Products products={productsD} addToBasket={addToBasket} removeFromBasket={removeFromBasket} />
-    </main>
-};
+export default class MainBody extends Component {
+    constructor(props) {
+        super(props);
 
-export default MainBody;
+        this.state = {products: productsD};
+        this.handleSort = this.handleSort.bind(this);
+    }
 
-MainBody.propTypes = {
-    products: PropTypes.array,
-    addToBasket: PropTypes.func,
-    removeFromBasket: PropTypes.func,
+    handleSort(sortDirection) {
+        this.setState(prevState => ({products: sortArray(prevState.products, sortDirection)}));
+    }
+
+    render() {
+        console.log(this.state.products);
+        return (
+            <main className="container">
+                <ProductsHeader onSort={this.handleSort}/>
+                <Products products={this.state.products} {...this.props} />
+            </main>
+        )
+    }
 };
