@@ -1,0 +1,53 @@
+.page_404{ padding:40px 0; background:#fff; font-family: 'Roboto', serif;
+}
+
+.page_404  img{ width:100%;}
+
+/*.four_zero_four_bg{
+    background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height: 400px;
+    background-position: center;
+}*/
+
+.four_zero_four_bg{
+    background-image: url(https://thumbs.gfycat.com/BlackandwhiteThunderousBorderterrier-size_restricted.gif);
+    height: 450px;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+
+.four_zero_four_bg1 h3{
+    font-size: 70px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.four_zero_four_bg h3{
+    font-size:80px;
+    margin: 100px 60px;
+    position: absolute;
+}
+
+/*.link_404{
+    color: #fff!important;
+    padding: 10px 20px;
+    background: #ff8b38;
+    margin: 20px 0;
+    display: inline-block;
+}*/
+
+.link_404 {
+    color: #fff !important;
+    padding: 10px 20px;
+    background: #ff8b38;
+    margin: 220px 145px;
+    display: inline-block;
+    position: absolute;
+}
+
+.contant_box_404{
+    margin-top:-50px;
+    text-align: center;
+}
+

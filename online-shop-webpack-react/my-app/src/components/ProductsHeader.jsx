@@ -1,33 +1,37 @@
-import React, {Component} from "react";
+import React, {useState, useEffect} from "react";
+import {connect} from 'react-redux';
 
-import '../styles/components/ProductsHeader.css';
+import productsHeader from '../styles/JSS/productsHeader';
 
-import CurrencyTransfer from './CurrencyTransfer.jsx';
+import {sortProducts} from "../actions";
 
-export default class ProductsHeader extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { sortDirection: 'Desc' };
+const ProductsHeader = ({...props}) => {
+  const classes = productsHeader();
+  const [sortDirection, setSortDirection] = useState('Desc');
 
-        this.sortClick = this.sortClick.bind(this);
-    }
+  useEffect(() => {
+    props.sortProducts(sortDirection);
+  }, [sortDirection]);
 
-    sortClick(event) {
-        event.preventDefault();
-        this.setState(prevState => ({sortDirection: prevState.sortDirection === 'Asc' ? 'Desc' : 'Asc'}), () => {
-            this.props.onSort(this.state.sortDirection);
-        });
-    }
+  const sortClick = (event) => {
+    event.preventDefault();
+    setSortDirection(prevState => (prevState === 'Asc' ? 'Desc' : 'Asc'));
+  };
 
-    render() {
-        return (
-            <div className="products__header">
-                <h3>Electronics</h3>
-                <div className="products__line">Sort by price: <a id="sort" href="#" className="products__sort" onClick={this.sortClick}>{this.state.sortDirection}</a></div>
-                <CurrencyTransfer/>
-            </div>
-        )
-    }
+  return (
+    <div className={classes.products__header}>
+      <h3>Electronics</h3>
+      <div className={classes.products__line}>Sort by price: <a id="sort" href="#" className={classes.products__sort} onClick={sortClick}>{sortDirection}</a></div>
+    </div>
+  )
 };
+
+ProductsHeader.displayName = 'ProductsHeader';
+
+const mapDispatchToProps = {
+  sortProducts,
+};
+
+export default connect(null, mapDispatchToProps)(ProductsHeader);
 
 

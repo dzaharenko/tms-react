@@ -1,9 +1,19 @@
 import React from 'react';
 
-import '../styles/components/Logo.css';
+import logo from '../styles/JSS/logo.js';
 
-const Logo = () => {
-    return <div className="header__logo">The best shop</div>
+import {Link} from "react-router-dom";
+import {withRouter} from "react-router-dom";
+
+const Logo = ({history}) => {
+  const classes = logo();
+  const handleClick = () => {
+    history.push('/');
+  };
+  return <Link to="/" onClick={handleClick} className={classes.header__logo}>The best shop</Link>
+
 };
 
-export default Logo;
+Logo.displayName = 'Logo';
+
+export default withRouter(Logo);

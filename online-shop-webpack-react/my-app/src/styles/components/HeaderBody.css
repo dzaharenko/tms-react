@@ -7,5 +7,5 @@
 .header__container {
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-columns: 0.8fr 0.5fr 1.5fr 1fr;
 }

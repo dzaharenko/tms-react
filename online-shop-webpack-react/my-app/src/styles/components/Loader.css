@@ -1,0 +1,34 @@
+.loader {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader.active {
+    display: flex;
+}
+
+.loader_logo {
+    height: 20vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .loader_logo {
+        animation: loader_logo_spin infinite 20s linear;
+    }
+}
+
+@keyframes loader_logo_spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
